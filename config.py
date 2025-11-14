@@ -18,8 +18,9 @@ class Config(object):
     password = quote_plus(SQL_PASSWORD)
 
     SQLALCHEMY_DATABASE_URI = (
-        f"mssql+pyodbc://{SQL_USER_NAME}@{SQL_SERVER}:{password}@{SQL_SERVER}:1433/"
-        f"{SQL_DATABASE}?driver=ODBC+Driver+17+for+SQL+Server")
+    "mssql+pymssql://cmsadmin:MyPassword@cms-sqldb-server.database.windows.net:1433/cmsdb"
+    )
+
 
     #SQLALCHEMY_DATABASE_URI = 'mssql+pyodbc://' + SQL_USER_NAME + '@' + SQL_SERVER + ':' + SQL_PASSWORD + '@' + SQL_SERVER + ':1433/' + SQL_DATABASE  + '?driver=ODBC+Driver+17+for+SQL+Server'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
